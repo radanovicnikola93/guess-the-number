@@ -1,12 +1,19 @@
-#/usr/bin/env python
-# -*- coding: utf-8 -*-
+import random
 
-secret = 8
+def main():
+    secret = random.randint(1, 20)
 
-guess = int(raw_input("Guess the secret number from 1 to 10: "))
+    while True:
+        guess = int(raw_input("Guess the secret number from 1 to 20: "))
 
-if guess == secret:
-    print "Congratulations!"
+        if guess == secret:
+            print "Congratulations! Its number %s! :)" % secret
+            break
+        elif guess > secret:
+            print "Try something lower."
+        elif guess < secret:
+            print "Try something higher."
 
-else:
-    print "Please try again"
+if __name__ == "__main__":
+    main()
+
